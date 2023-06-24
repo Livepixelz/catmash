@@ -20,7 +20,7 @@ function App() {
     <section className="absolute inset-0">
       <header className="text-white my-8 p-4 h-[160px] flex item-center justify-center flex flex-col w-full text-center sticky">
           <ReactSVG className="text-pink-800 h-40 w-40 flex-1 mx-auto" src="logo.svg" />
-          <h1 className="font-serif -mt-10 text-3xl lg:text-5xl">Balance ton chat</h1>
+          <h1 className="font-serif font-bold -mt-10 text-3xl lg:text-5xl">Balance ton chat</h1>
       </header>
       <main className="h-screen flex justify-center pb-[164px]">
         <Outlet />
