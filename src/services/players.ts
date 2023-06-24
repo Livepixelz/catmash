@@ -1,12 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 
-// DEV ONLY!!!
-const pause = (duration: number) => {
-  return new Promise((resolve) => {
-    setTimeout(resolve, duration)
-  })
-}
-
 export interface Player {
   id: string;
   name: string;
@@ -23,11 +16,6 @@ const playersApi = createApi({
   reducerPath: "players",
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:3001",
-    fetchFn: async (...args) => {
-      // REMOVE FOR PRODUCTION
-      await pause(1000)
-      return fetch(...args)
-    }
   }),
   tagTypes: ["Players"],
   endpoints: (builder) => ({

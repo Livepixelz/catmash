@@ -1,13 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 import {nanoid} from "@reduxjs/toolkit";
 
-// DEV ONLY!!!
-const pause = (duration: number) => {
-  return new Promise((resolve) => {
-    setTimeout(resolve, duration)
-  })
-}
-
 export interface Matchup {
   id: string;
   players: [];
@@ -21,12 +14,7 @@ interface MatchupsResponse {
 const matchupsApi = createApi({
   reducerPath: "matchups",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:3001",
-    fetchFn: async (...args) => {
-      // REMOVE FOR PRODUCTION
-      await pause(1000)
-      return fetch(...args)
-    }
+    baseUrl: "http://localhost:3001"
   }),
   tagTypes: ["Matchups"],
   endpoints: (builder) => ({
