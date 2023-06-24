@@ -17,7 +17,7 @@ const Table = ({ data, config }: TableProps) => {
   return (
     <table className=" shadow-md shadow-pink-900 rounded-lg max-w-[600px] w-full mx-8">
       <thead>
-        <tr className="border-b border-solid border-pink-200 bg-pink-800 text-white rounded-full overflow-hidden">
+        <tr className="bg-pink-800 text-white rounded-full overflow-hidden">
           {config.map((column) => {
             if (column.header) {
               return <Fragment key={column.label}>{column.header()}</Fragment>

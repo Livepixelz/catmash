@@ -17,12 +17,12 @@ function App() {
     }
   ]
   return (
-    <section className="absolute inset-0">
-      <header className="text-white my-8 p-4 h-[160px] flex item-center justify-center flex flex-col w-full text-center sticky">
-          <ReactSVG className="text-pink-800 h-40 w-40 flex-1 mx-auto" src="logo.svg" />
-          <h1 className="font-serif font-bold -mt-10 text-3xl lg:text-5xl">Balance ton chat</h1>
+    <section className="absolute inset-0 flex flex-col">
+      <header className="text-white lg:my-8 p-4 h-[160px] -mb-10 flex item-center justify-center flex flex-col w-full text-center sticky">
+          <ReactSVG className="md:animate-dance text-pink-800 w-20 h-20 lg:h-40 lg:w-40 flex-1 mx-auto" src="logo.svg" />
+          <h1 className="relative font-serif font-bold -top-10 lg:top-0 md:-mt-10 text-3xl lg:text-5xl">Balance ton chat</h1>
       </header>
-      <main className="h-screen flex justify-center pb-[164px]">
+      <main className="flex flex-1 justify-center pb-[164px]">
         <Outlet />
       </main>
       <NavBar routes={nav} className="fixed bottom-0 inset-x-0" />

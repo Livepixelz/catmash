@@ -2,9 +2,9 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 import {nanoid} from "@reduxjs/toolkit";
 
 export interface Matchup {
-  id: string;
-  players: [];
-  winner: string;
+  id?: string;
+  players: string[];
+  winner?: string;
 }
 
 interface MatchupsResponse {

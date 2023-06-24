@@ -32,16 +32,14 @@ export default function SortableTable({ data, config }: TableProps) {
         <th
           key={column.label}
           className={classNames("text-left p-3 cursor-pointer", {
-            "bg-pink-700": column.label === sortBy
+            "bg-pink-100 text-black": column.label === sortBy
           })}
           onClick={() => {
             setSort(column.label)
           }}
         >
           <div
-            className={classNames("flex items-center justify-between", {
-              "opacity-60": column.label !== sortBy
-            })}
+            className={classNames("flex items-center justify-between")}
           >
             {column.label}
             {getIcons(column)}

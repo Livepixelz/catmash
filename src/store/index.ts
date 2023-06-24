@@ -14,8 +14,7 @@ export const store = configureStore({
 
 setupListeners(store.dispatch)
 
-export { useFetchPlayersQuery } from "../services/players"
-export { useFetchMatchupsQuery } from "../services/matchups"
-export { useCreateMatchupMutation, useUpdateMatchupMutation } from "../services/matchups"
+export { useFetchPlayersQuery, useUpdatePlayerMutation } from "../services/players"
+export { useFetchMatchupsQuery, useCreateMatchupMutation, useUpdateMatchupMutation } from "../services/matchups"
 
 export default store

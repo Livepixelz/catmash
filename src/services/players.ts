@@ -25,7 +25,12 @@ const playersApi = createApi({
           url: "/players?_sort=score&_order=desc",
           method: "GET"
         }
-      }
+      },
+      providesTags: (result, error) => {
+        return result.map((player:Player) => {
+          return { type: 'Players', id: player.id };
+        });
+      },
     }),
     updatePlayer: builder.mutation<Player, Partial<Player>>({
         query: ({id, ...patch}) => ({
@@ -40,5 +45,5 @@ const playersApi = createApi({
   })
 })
 
-export const { useFetchPlayersQuery } = playersApi
+export const { useFetchPlayersQuery, useUpdatePlayerMutation } = playersApi
 export { playersApi }
