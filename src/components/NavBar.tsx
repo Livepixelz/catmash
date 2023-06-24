@@ -1,11 +1,18 @@
 import classNames from "classnames"
 import PropTypes from "prop-types"
+import { ReactElement } from "react"
 import { Link } from "react-router-dom"
-function NavBar({ routes, className }) {
+
+type NavBarProps = {
+  routes: {label:string,to:string, icon:ReactElement}[],
+  className: string
+}
+
+function NavBar({ routes, className }:NavBarProps) {
   return (
     <nav
       className={classNames(
-        "flex items-center justify-center text-white bg-pink-800",
+        "flex items-center justify-center text-white bg-pink-800 z-50",
         className ?? ""
       )}
     >
