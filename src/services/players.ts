@@ -31,7 +31,7 @@ const playersApi = createApi({
   }),
   tagTypes: ["Players"],
   endpoints: (builder) => ({
-    fetchPlayers: builder.query<PlayersResponse, void>({
+    fetchPlayers: builder.query<PlayersResponse|any, void>({
       query: () => {
         return {
           url: "/players?_sort=score&_order=desc",
