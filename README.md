@@ -8,3 +8,10 @@
 - Data Fetching : Redux Toolkit Query
 - Styling : TailwindCSS
 - Design : minimal...
+
+### To start project locally :
+
+- Start dev server :
+`yarn dev`
+- Start api json-server : 
+`yarn server`  
