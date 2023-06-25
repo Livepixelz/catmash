@@ -1,6 +1,5 @@
 import { ReactSVG } from "react-svg";
 import { Player } from "../services/players"
-import Image from "./Image"
 
 type PlayerCardProps = {
   player: Player,
@@ -28,7 +27,6 @@ function PlayerCard({ player, handleClick }: PlayerCardProps) {
           src={url}
           alt={id}
         />
-        <Image image={image} />
       </figure>
       <figcaption className="font-serif text-xl lg:text-3xl text-center italic font-bold text-white absolute w-full">
         {firstname}
