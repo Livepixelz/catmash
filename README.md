@@ -11,6 +11,8 @@
 
 ### To start project locally :
 
+- Install dependencies :
+`yarn dev`
 - Start dev server :
 `yarn dev`
 - Start api json-server : 
