@@ -26,10 +26,12 @@ const playersApi = createApi({
           method: "GET"
         }
       },
-      providesTags: (result) => {
-        return result.map((player:Player) => {
+      providesTags: (result, _error) => {
+        const tags = result.map((player:Player) => {
           return { type: 'Players', id: player.id };
         });
+        tags.push({ type: 'Players', id: 'LIST' });
+        return tags
       },
     }),
     updatePlayer: builder.mutation<Player, Partial<Player>>({
@@ -40,6 +42,7 @@ const playersApi = createApi({
         }),
         invalidatesTags: (_result, _error, arg) => [
             { type: "Players", id: arg.id },
+            { type: 'Players', id: 'LIST' }
         ],
     }),
   })

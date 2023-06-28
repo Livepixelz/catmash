@@ -13,7 +13,7 @@ const MatchPage = ()  => {
   const { data: playersData, isLoading: isPlayersLoading } = useFetchPlayersQuery()
 
   const [updatePlayer] = useUpdatePlayerMutation();
-
+  
   const localHistory = localStorage.getItem("matchups") ? JSON.parse(localStorage.getItem("matchups") ?? '') : []
 
   const [matchupsHistory, setMatchupsHistory] = useState(localHistory)
@@ -27,6 +27,7 @@ const MatchPage = ()  => {
     if (matchup && winner) {
       updatePlayer({ id, score: winner.score + 1 })
       markMatchupAsPlayed(matchup)
+      //console.log(updatePlayerResults.data)
     }
   }
 
