@@ -26,7 +26,7 @@ const playersApi = createApi({
           method: "GET"
         }
       },
-      providesTags: (result, error) => {
+      providesTags: (result) => {
         return result.map((player:Player) => {
           return { type: 'Players', id: player.id };
         });
@@ -38,7 +38,7 @@ const playersApi = createApi({
             method: "PATCH",
             body: patch
         }),
-        invalidatesTags: (result, error, arg) => [
+        invalidatesTags: (_result, _error, arg) => [
             { type: "Players", id: arg.id },
         ],
     }),

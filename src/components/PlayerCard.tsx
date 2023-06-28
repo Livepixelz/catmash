@@ -8,11 +8,6 @@ type PlayerCardProps = {
 function PlayerCard({ player, handleClick }: PlayerCardProps) {
   const { id, url, firstname } = player
 
-  const image = {
-    alt: id,
-    src: url,
-  }
-
   return (
     <article className="relative flex-1">
       <figure

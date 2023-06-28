@@ -7,13 +7,12 @@ import { useFetchPlayersQuery, useUpdatePlayerMutation } from "../store"
 import { Matchup } from "../services/matchups"
 import { Player } from "../services/players"
 import { useEffect, useState } from "react"
-import { nanoid } from "@reduxjs/toolkit"
 
 const MatchPage = ()  => {
 
   const { data: playersData, isLoading: isPlayersLoading } = useFetchPlayersQuery()
 
-  const [updatePlayer, updatePlayerResults] = useUpdatePlayerMutation();
+  const [updatePlayer] = useUpdatePlayerMutation();
 
   const localHistory = localStorage.getItem("matchups") ? JSON.parse(localStorage.getItem("matchups") ?? '') : []
 
@@ -26,7 +25,6 @@ const MatchPage = ()  => {
   const handlePlayerClick = (id: string) => {
     const winner = id === playerOne?.id ? playerOne : playerTwo
     if (matchup && winner) {
-      const updatedMatch = { ...matchup, id: nanoid(), winner: id }
       updatePlayer({ id, score: winner.score + 1 })
       markMatchupAsPlayed(matchup)
     }

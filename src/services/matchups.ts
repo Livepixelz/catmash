@@ -42,9 +42,6 @@ const matchupsApi = createApi({
             method: "PATCH",
             body: patch
         }),
-        invalidatesTags: (result, error, arg) => [
-            { type: "Matchups", id: arg.id },
-        ],
     }),
   })
 })
