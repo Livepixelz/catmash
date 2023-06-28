@@ -14,7 +14,7 @@ interface MatchupsResponse {
 const matchupsApi = createApi({
   reducerPath: "matchups",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:3001"
+    baseUrl: import.meta.env.VITE_API_BASE_URL as string,
   }),
   tagTypes: ["Matchups"],
   endpoints: (builder) => ({

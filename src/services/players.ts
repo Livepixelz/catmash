@@ -15,7 +15,7 @@ interface PlayersResponse {
 const playersApi = createApi({
   reducerPath: "players",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:3001",
+    baseUrl: import.meta.env.VITE_API_BASE_URL as string,
   }),
   tagTypes: ["Players"],
   endpoints: (builder) => ({
